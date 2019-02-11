@@ -66,19 +66,6 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
-
-# Sonarlint plugin
-.idea/sonarlint
-
-
-# End of https://www.gitignore.io/api/intellij
-AWS/.idea/workspace.xml
-AWS/src/Measurement.java
-AWS/src/DatabaseConnection.java
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+AgendaGUI/\.idea/workspace\.xml
