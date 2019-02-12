@@ -1,4 +1,4 @@
-import Performance.Artists;
+package Performance;
 
 public class Artist implements Artists {
 

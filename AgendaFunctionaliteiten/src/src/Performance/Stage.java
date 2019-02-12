@@ -1,12 +1,11 @@
-import Performance.Stages;
+package Performance;
 
 public class Stage implements Stages {
 
+    private String name;
     private String beginTime;
     private String endTime;
-    private Artist artist;
     private String location;
-    private Stage stage;
 
 
     public void   setBeginTime(String temp) {
@@ -16,6 +15,12 @@ public class Stage implements Stages {
         return this.beginTime;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return this.name;
+    }
 
     public void   setEndTime(String temp) {
         this.endTime = temp;
@@ -33,7 +38,10 @@ public class Stage implements Stages {
     }
 
 
-    public Stage(String name, String genre, String Stage, int popularity) {
+    public Stage(String name, String beginTime, String endTime) {
+        this.beginTime = beginTime;
+        this.endTime = endTime;
+        this.name = name;
 
     }
 }

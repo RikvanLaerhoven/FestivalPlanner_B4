@@ -11,4 +11,6 @@ public interface Stages {
     void setLocation(String temp);
     String getLocation();
 
+    void setName(String temp);
+    String getName();
 }
