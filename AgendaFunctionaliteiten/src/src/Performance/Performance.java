@@ -4,10 +4,10 @@ public class Performance {
 
     private Stage stage;
     private Artist artist;
-    private String beginTime;
-    private String endTime;
+    private int beginTime;
+    private int endTime;
 
-    public Performance(Stage stage, Artist artist, String beginTime, String endTime){
+    public Performance(Stage stage, Artist artist, int beginTime, int endTime){
         this.stage = stage;
         this.artist = artist;
         this.beginTime = beginTime;
@@ -28,17 +28,19 @@ public class Performance {
         this.artist = artist;
     }
 
-    public String getBeginTime() {
+    public int getBeginTime() {
         return beginTime;
     }
-    public void setBeginTime(String beginTime) {
+    public void setBeginTime(int beginTime) {
         this.beginTime = beginTime;
     }
 
-    public String getEndTime() {
+    public int getEndTime() {
         return endTime;
     }
-    public void setEndTime(String endTime) {
+    public void setEndTime(int endTime) {
         this.endTime = endTime;
     }
+
+
 }
