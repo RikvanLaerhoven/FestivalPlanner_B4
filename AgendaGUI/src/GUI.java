@@ -49,22 +49,17 @@ public class GUI extends Application {
             TextField stageTextfield = new TextField("Type stage here");
             TextField popularityTextfield = new TextField("Type popularity here");
 
-            HBox tabInput = new HBox();
-            VBox inputData = new VBox();
-            HBox nameInput = new HBox();
-            HBox genreInput = new HBox();
-            HBox stageInput = new HBox();
-            HBox popularityInput = new HBox();
-            HBox timeInput = new HBox();
+            HBox content = new HBox();
+            VBox values = new VBox();
+            VBox textfields = new VBox();
+            values.getChildren().addAll(new Label("Name: "),new Label("Genre: "),new Label("Stage: "),new Label("Popularity: "),new Label("Time: "));
+            values.setSpacing(29);
+            textfields.getChildren().addAll(nameTextfield,genreTextfield,stageTextfield,popularityTextfield);
+            textfields.setSpacing(20);
+            content.getChildren().addAll(values,textfields);
+            content.setSpacing(10);
 
-            nameInput.getChildren().addAll(new Label("Name: "), nameTextfield);
-            genreInput.getChildren().addAll(new Label("Genre: "), genreTextfield);
-            stageInput.getChildren().addAll(new Label("Stage: "), stageTextfield);
-            popularityInput.getChildren().addAll(new Label("Popularity: "), popularityTextfield);
-            timeInput.getChildren().addAll(new Label("Time: "));
-
-            inputData.getChildren().addAll(nameInput, genreInput, stageInput, popularityInput, timeInput);
-            input.setContent(inputData);
+            input.setContent(content);
 
 
             /**algemene regels*/
