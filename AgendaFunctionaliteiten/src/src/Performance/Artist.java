@@ -2,7 +2,7 @@ package Performance;
 
 import javafx.stage.Stage;
 
-public interface Artists {
+public interface Artist {
 
     
 
@@ -15,7 +15,7 @@ public interface Artists {
     void setName(String temp);
     String getName();
 
-    void setStage(Stages temp);
+    void setStage(Stage temp);
     Stage getStage();
 
 
