@@ -14,13 +14,6 @@ public class Artist implements Artists {
         this.popularity = popularity;
     }
 
-
-
-
-
-
-
-
     public void setPopularity(int i){
         this.popularity = i;
     }
