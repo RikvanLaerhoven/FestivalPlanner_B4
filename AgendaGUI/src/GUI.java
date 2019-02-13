@@ -11,6 +11,8 @@ public class GUI extends Application {
     /**
      * @Author: Rik van Laerhoven
      */
+    private String nameInput;
+    private String genreInput;
 
     /** onderstaande variabelen horen bij de tab Input,
      * deze variabelen krijgen zodra op de enter knop wordt gedrukt de inhoud van het bijbehorden tekstveld.
