@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -10,6 +11,8 @@ public class GUI extends Application {
     /**
      * @Author: Rik van Laerhoven
      */
+    private String nameInput;
+    private String genreInput;
 
     public void start(Stage stage) throws Exception {
         try {
@@ -32,16 +35,26 @@ public class GUI extends Application {
             VBox popularity = new VBox();
             VBox time = new VBox();
             HBox tabData = new HBox();
+            GridPane gridPaneData = new GridPane();
 
-            name.getChildren().add(new Label("Name"));
-            genre.getChildren().add(new Label("Genre"));
-            podium.getChildren().add(new Label("Stage"));
-            popularity.getChildren().add(new Label("Popularity"));
-            time.getChildren().add(new Label("Time"));
+            name.getChildren().add(new Label(stringEditor("Name")));
+            genre.getChildren().add(new Label(stringEditor("Genre")));
+            podium.getChildren().add(new Label(stringEditor("Stage")));
+            popularity.getChildren().add(new Label(stringEditor("Popularity")));
+            time.getChildren().add(new Label(stringEditor("Time")));
 
-            tabData.getChildren().addAll(name, genre, podium, popularity, time);
+            //tabData.getChildren().addAll(name, genre, podium, popularity, time);
             tabData.setSpacing(250);
             data.setContent(tabData);
+
+            gridPaneData.setGridLinesVisible(true);
+            gridPaneData.add(name,1,1);
+            gridPaneData.add(genre,2,1);
+            gridPaneData.add(podium,3,1);
+            gridPaneData.add(popularity, 4, 1);
+            gridPaneData.add(time,5,1);
+            tabData.getChildren().add(gridPaneData);
+
 
             /**tabInput*/
             TextField nameTextfield = new TextField("Type name here");
@@ -59,7 +72,21 @@ public class GUI extends Application {
             content.getChildren().addAll(values,textfields);
             content.setSpacing(10);
 
-            input.setContent(content);
+            Button buttonEnter = new Button("Enter");
+            Button buttonImport = new Button("Import File");
+            buttonEnter.setScaleY(2);
+            buttonEnter.setScaleX(2);
+            buttonImport.setScaleY(2);
+            buttonImport.setScaleX(2);
+
+            GridPane gridPaneInput = new GridPane();
+            gridPaneInput.setHgap(50);
+            gridPaneInput.setVgap(50);
+            gridPaneInput.add(content,1,1);
+            gridPaneInput.add(buttonEnter,1,2);
+            gridPaneInput.add(buttonImport,3,2);
+
+            input.setContent(gridPaneInput);
 
 
             /**algemene regels*/
@@ -70,8 +97,13 @@ public class GUI extends Application {
             BorderPane borderPane = new BorderPane();
             borderPane.setCenter(tabPane);
             Scene scene = new Scene(borderPane);
+            tabPane.setMinSize(500,400);
             stage.setScene(scene);
             stage.show();
+            stage.setTitle("AgendaPlanner");
+
+            /**button handler*/
+            
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -80,5 +112,9 @@ public class GUI extends Application {
 
     public static void main(String[] args) {
         launch(GUI.class);
+    }
+
+    public String stringEditor(String inputText){
+        return "  " + inputText + "  ";
     }
 }
