@@ -11,8 +11,15 @@ public class GUI extends Application {
     /**
      * @Author: Rik van Laerhoven
      */
+
+    /** onderstaande variabelen horen bij de tab Input,
+     * deze variabelen krijgen zodra op de enter knop wordt gedrukt de inhoud van het bijbehorden tekstveld.
+     */
     private String nameInput;
     private String genreInput;
+    private String stageInput;
+    private String popularityInput;
+    private String timeInput;
 
     public void start(Stage stage) throws Exception {
         try {
@@ -21,7 +28,11 @@ public class GUI extends Application {
             Tab data = new Tab("Data");
             Tab input = new Tab("Input");
 
-            /**tabAgenda*/
+            /**tabAgenda
+             *
+             * MOET NOG GEMAAKT WORDEN
+             *
+             */
             HBox tabAgenda = new HBox();
             VBox main = new VBox();
             VBox second = new VBox();
@@ -103,7 +114,13 @@ public class GUI extends Application {
             stage.setTitle("AgendaPlanner");
 
             /**button handler*/
-            
+            buttonEnter.setOnAction(event -> { /** de handelingen van de Enter knop*/
+                nameInput = nameTextfield.getText();
+                genreInput = genreTextfield.getText();
+                stageInput = stageTextfield.getText();
+                popularityInput = popularityTextfield.getText();
+                //iet voor de tijd
+            });
         }
         catch (Exception e){
             System.out.println(e.getMessage());
