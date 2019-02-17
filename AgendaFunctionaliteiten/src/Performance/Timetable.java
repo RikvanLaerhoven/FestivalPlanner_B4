@@ -1,10 +1,13 @@
+package Performance;
+
 import Performance.*;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author Boris Korevaar
+ * @author Boris Korevaar & Rafael Binnenmarsch
  *
  * Class voor het toevoegen, verranderen van eigenschappen, sorteren en verwijderen van "Performances".
  */
@@ -13,11 +16,13 @@ public class Timetable {
 
     private List<Performance> performances;
 
+
+
     public Timetable(){
         this.performances = new LinkedList<>();
     }
 
-    public void addPerformance(Stage stage, Artist artist, int beginTime, int endTime){
+    public void addPerformance(ActiveStage stage, Artist artist, int beginTime, int endTime){
 
         Performance temp = new Performance(stage, artist,beginTime,endTime);
 
@@ -26,7 +31,7 @@ public class Timetable {
         }
     }
 
-    public void editPerformance(Performance performance, Artist artist, int beginTime, int endTime, Stage stage){
+    public void editPerformance(Performance performance, Artist artist, int beginTime, int endTime, ActiveStage stage){
 
         if(bookingAvailable(performance) == true){
             performance.setBeginTime(beginTime);
@@ -35,7 +40,7 @@ public class Timetable {
             performance.setArtist(artist);
         }
     }
-    public void editPerformance(Performance performance, int beginTime, int endTime, Stage stage){
+    public void editPerformance(Performance performance, int beginTime, int endTime, ActiveStage stage){
         if(bookingAvailable(performance) == true){
             performance.setBeginTime(beginTime);
             performance.setEndTime(endTime);
@@ -48,7 +53,7 @@ public class Timetable {
             performance.setEndTime(endTime);
         }
     }
-    public void editPerformance(Performance performance, Stage stage){
+    public void editPerformance(Performance performance, ActiveStage stage){
         if(bookingAvailable(performance) == true){
             performance.setStage(stage);
         }

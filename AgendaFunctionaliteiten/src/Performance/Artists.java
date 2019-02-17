@@ -1,7 +1,7 @@
 package Performance;
 
 /**
- * @author Boris Korevaar
+ * @author Boris Korevaar & Rafael Binnenmarsch
  *
  */
 public interface Artists {

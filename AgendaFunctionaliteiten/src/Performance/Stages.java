@@ -1,15 +1,15 @@
 package Performance;
 
 /**
- * @author Boris Korevaar
+ * @author Boris Korevaar & Rafael Binnenmarsch
  */
 public interface Stages {
 
-    void setBeginTime(String temp);
-    String getBeginTime();
+    void setBeginTime(int temp);
+    int getBeginTime();
 
-    void setLocation(String temp);
-    String getLocation();
+    void setEndTime(int temp);
+    int getEndTime();
 
     void setName(String temp);
     String getName();

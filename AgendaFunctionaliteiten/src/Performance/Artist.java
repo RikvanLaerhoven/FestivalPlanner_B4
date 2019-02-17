@@ -1,16 +1,16 @@
 package Performance;
 
 /**
- * @author Boris Korevaar
+ * @author Boris Korevaar & Rafael Binnenmarsch
  */
 public class Artist implements Artists {
 
-    private Stage stage;
+    private ActiveStage stage;
     private String name;
     private String genre;
     private int popularity;
 
-    public Artist(String name, String genre, Stage stage, int popularity){
+    public Artist(String name, String genre, ActiveStage stage, int popularity){
         this.name = name;
         this.genre = genre;
         this.stage = stage;
