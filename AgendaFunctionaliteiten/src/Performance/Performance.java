@@ -1,5 +1,10 @@
 package Performance;
 
+/**
+ * @author Boris Korevaar
+ *
+ *
+ */
 public class Performance {
 
     private Stage stage;

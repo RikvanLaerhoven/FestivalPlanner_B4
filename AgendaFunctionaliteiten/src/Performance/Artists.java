@@ -1,5 +1,9 @@
 package Performance;
 
+/**
+ * @author Boris Korevaar
+ *
+ */
 public interface Artists {
 
     public void setPopularity(int i);

@@ -1,8 +1,8 @@
 package Performance;
 
-import java.util.LinkedList;
-import java.util.List;
-
+/**
+ * Boris Korevaar
+ */
 public class Stage implements Stages {
 
     private String name;
@@ -18,20 +18,12 @@ public class Stage implements Stages {
     }
 
 
-   public void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
     public String getName(){
         return this.name;
     }
-    /*
-    public void   setEndTime(String temp) {
-        this.endTime = temp;
-
-    }
-    public String getEndTime() {
-        return this.endTime;
-    }*/
     public void   setLocation(String temp) {
         this.location = temp;
     }

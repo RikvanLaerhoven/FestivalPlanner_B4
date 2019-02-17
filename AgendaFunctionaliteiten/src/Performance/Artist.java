@@ -1,5 +1,8 @@
 package Performance;
 
+/**
+ * @author Boris Korevaar
+ */
 public class Artist implements Artists {
 
     private Stage stage;
