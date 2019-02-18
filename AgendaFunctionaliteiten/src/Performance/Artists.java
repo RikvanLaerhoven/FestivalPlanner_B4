@@ -1,5 +1,9 @@
 package Performance;
 
+/**
+ * @author Boris Korevaar & Rafael Binnenmarsch
+ *
+ */
 public interface Artists {
 
     public void setPopularity(int i);

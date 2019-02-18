@@ -1,23 +1,28 @@
 package Performance;
 
+/**
+ * @author Boris Korevaar & Rafael Binnenmarsch
+ *
+ *
+ */
 public class Performance {
 
-    private Stage stage;
+    private ActiveStage stage;
     private Artist artist;
     private int beginTime;
     private int endTime;
 
-    public Performance(Stage stage, Artist artist, int beginTime, int endTime){
+    public Performance(ActiveStage stage, Artist artist, int beginTime, int endTime){
         this.stage = stage;
         this.artist = artist;
         this.beginTime = beginTime;
         this.endTime = endTime;
     }
 
-    public Stage getStage() {
+    public ActiveStage getStage() {
         return this.stage;
     }
-    public void setStage(Stage stage) {
+    public void setStage(ActiveStage stage) {
         this.stage = stage;
     }
 
