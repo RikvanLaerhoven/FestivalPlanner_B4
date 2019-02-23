@@ -47,7 +47,6 @@ public class GUI extends Application {
             Tab data = new Tab("Data");
             Tab input = new Tab("Input");
 
-
             /**tabAgenda*/
             VBox tabAgenda = new VBox();
             VBox main = new VBox();
@@ -71,7 +70,6 @@ public class GUI extends Application {
             sedudl4.getChildren().add(new Label(stringEditor("21:00\n  22:00")));
             sedudl5.getChildren().add(new Label(stringEditor("23:00\n  00:00")));
 
-
             main.getChildren().add(new Label(stringEditor("\tMain Stage\t\t")));
             second.getChildren().add(new Label(stringEditor("\tHill Stage\t")));
             third.getChildren().add(new Label(stringEditor("\tForest Stage\t\t")));
@@ -93,7 +91,6 @@ public class GUI extends Application {
 
             tabAgenda.getChildren().add(gridPaneAgenda);
             gridPaneAgenda.setGridLinesVisible(true);
-
 
             /**tabData*/
             VBox name = new VBox();
@@ -121,7 +118,6 @@ public class GUI extends Application {
             gridPaneData.add(time, 5, 1);
             tabData.getChildren().add(gridPaneData);
 
-
             /**tabInput*/
             TextField nameTextfield = new TextField("Type name here");
             TextField genreTextfield = new TextField("Type genre here");
@@ -131,12 +127,16 @@ public class GUI extends Application {
             TextField timeToTextfield = new TextField();
 
             final Label notification = new Label();
+            final Label saveNotification = new Label();
+
             AtomicReference<String> file = new AtomicReference<>("");
+            AtomicReference<String> saveFile = new AtomicReference<>("");
 
             HBox content = new HBox();
             VBox values = new VBox();
             VBox textfields = new VBox();
             VBox fileInput = new VBox();
+            VBox saveFileInput = new VBox();
             VBox timeTextfields = new VBox();
             HBox timeFromBox = new HBox();
             HBox timeToBox = new HBox();
@@ -153,6 +153,9 @@ public class GUI extends Application {
 
             Button buttonEnter = new Button("Enter");
             Button buttonFileImport = new Button("Import File");
+            Button buttonSaveFile = new Button("Save File");
+            buttonSaveFile.setScaleY(2);
+            buttonSaveFile.setScaleX(2);
             buttonEnter.setScaleY(2);
             buttonEnter.setScaleX(2);
             buttonFileImport.setScaleY(2);
@@ -169,17 +172,51 @@ public class GUI extends Application {
             fileComboBox.setPromptText("Select file");
             fileComboBox.setEditable(true);
 
-
             fileInput.getChildren().addAll(new Label("File: "), fileComboBox);
             GridPane gridPaneInput = new GridPane();
-            gridPaneInput.setHgap(50);
+            gridPaneInput.setHgap(100);
             gridPaneInput.setVgap(50);
             gridPaneInput.add(content, 1, 1);
             gridPaneInput.add(buttonEnter, 1, 2);
             gridPaneInput.add(fileInput, 2, 1);
             gridPaneInput.add(buttonFileImport, 2, 2);
             gridPaneInput.add(notification, 2, 3, 1, 1);
+            gridPaneInput.add(saveNotification, 3, 3, 1, 1);
+
             input.setContent(gridPaneInput);
+
+            /**save file*/
+            final ComboBox saveFileComboBox = new ComboBox();
+            saveFileComboBox.getItems().addAll(
+                    "File1",
+                    "File2",
+                    "File3",
+                    "File4"
+            );
+            saveFileComboBox.setPromptText("Select file");
+            saveFileComboBox.setEditable(true);
+
+            saveFileInput.getChildren().addAll(new Label("Save File: "), saveFileComboBox);
+            gridPaneInput.add(buttonSaveFile, 3, 2, 1, 1);
+            gridPaneInput.add(saveFileInput, 3, 1);
+
+            input.setContent(gridPaneInput);
+
+            /**button handler voor save file input*/
+            saveFileComboBox.valueProperty().addListener((ChangeListener<String>) (ov, t, t1) -> file.set(t1));
+            buttonSaveFile.setOnAction(e -> {
+                if (saveFileComboBox.getValue() != null &&
+                        !saveFileComboBox.getValue().toString().isEmpty()) {
+                    saveNotification.setText("You have selected file: " + "\"" + file + "\"");
+                    saveFileComboBox.setValue(null);
+                    if (saveFileComboBox.getValue() != null &&
+                            !saveFileComboBox.getValue().toString().isEmpty()) {
+                        saveFileComboBox.setValue(null);
+                    }
+                } else {
+                    notification.setText("You have not selected a file");
+                }
+            });
 
             /**algemene regels*/
             tabPane.getTabs().add(agenda);
