@@ -1,5 +1,7 @@
 package Performance;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class SaveFile  {
@@ -42,18 +44,41 @@ public class SaveFile  {
 
 
 
-    public void saveFile(Artist artist){
-        if(GUI.saveFile == file1) {
+    public void saveFile(Artist artist) {
+        try {
+            File file1 = new File("scores.txt");
+            File file2 = new File("scores.txt");
+            File file3 = new File("scores.txt");
+            File file4 = new File("scores.txt");
+
+            PrintWriter output = null;
+
+            if (GUI.saveFile == file1) {
+
+                output.print(artist);
                 this.savelist1.add(artist);
+            }
+            if (GUI.saveFile == file2) {
+
+                output.print(artist);
+                this.savelist2.add(artist);
+            }
+            if (GUI.saveFile == file3) {
+
+                output.print(artist);
+                this.savelist3.add(artist);
+            }
+            if (GUI.saveFile == file4) {
+
+                output.print(artist);
+                this.savelist4.add(artist);
+            }
         }
-        if(GUI.saveFile == file2) {
-            this.savelist2.add(artist);
+        catch (Exception e){
+            System.out.println(e.getMessage());
         }
-        if(GUI.saveFile == file3) {
-            this.savelist3.add(artist);
-        }
-        if(GUI.saveFile == file4) {
-            this.savelist4.add(artist);
+        finally {
+            output.close();
         }
     }
 
