@@ -19,7 +19,6 @@ public class Genre implements java.io.Serializable {
     {
         this.name = name;
     }
-
     public String getName()
     {
         return name;
@@ -29,10 +28,9 @@ public class Genre implements java.io.Serializable {
     {
         this.info = info;
     }
-
     public String getInfo()
     {
-        return info;
+        return this.info;
     }
 
     public String toString(){

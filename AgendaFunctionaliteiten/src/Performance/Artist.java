@@ -20,24 +20,22 @@ public class Artist implements java.io.Serializable {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+    public String getGenre() {
+        return this.genre;
+    }
 
     public int getPopularity() {
         return this.popularity;
+    }
+    public void setPopularity(int popularity) {
+        this.popularity = popularity;
     }
 
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getGenre() {
-        return this.genre;
-    }
-
-    public void setPopularity(int popularity) {
-        this.popularity = popularity;
-    }
-
     public String getName() {
         return this.name;
     }
+
 }
