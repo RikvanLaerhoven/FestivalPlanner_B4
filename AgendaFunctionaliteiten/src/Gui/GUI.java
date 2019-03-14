@@ -1,7 +1,9 @@
-package frame;
+package Gui;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
+
+import java.io.*;
 
 import performance.*;
 
@@ -37,7 +39,7 @@ public class GUI extends Application {
     private String timeToInput;
     private int dataCounter = 1;
 
-
+    private Festival festival = new Festival();
 
     public void start(Stage stage) throws Exception {
         try {
@@ -242,7 +244,52 @@ public class GUI extends Application {
         gridPaneData.add(new Label(stringEditor(stageInput)), 3, dataCounter);
         gridPaneData.add(new Label(stringEditor(popularityInput)), 4, dataCounter);
         gridPaneData.add(new Label(stringEditor(timeFromInput + " - " + timeToInput)), 5, dataCounter);
-
     }
 
+
+    /***
+     * Gemaakt door Boris Korevaar
+     *
+     * (Doordat de GUI nog niet aangepast is heeft het geen zin om te implementeren in de huidige versie aangezien deze veel verrandering moet ondergaan.)
+     *
+     * Hier word de gemaakte of geselecteerde Festival opgeslagen of geopend in een gecreërde map binnen het project bestand.
+     */
+    //Adds a directory where save files can be stored.
+    public void createDirectory(){
+        File path = new File("Festivals/");
+        path.mkdirs();
+    }
+
+    //Save's current festival in the bevore created directory
+    private void SaveCurrentFestival(String saveName){
+        try{
+            createDirectory();
+            FileOutputStream fileOutput = new FileOutputStream("Festivals/"+ saveName+ ".dat");
+            ObjectOutputStream output = new ObjectOutputStream(fileOutput);
+            output.writeObject(festival);
+            output.close();
+            fileOutput.close();
+
+        }catch (IOException temp){
+            temp.printStackTrace();
+        }
+    }
+    //Loads the selected save
+    private void loadSave(String saveName){
+        try
+        {
+            FileInputStream fileInput = new FileInputStream("Festival/"+saveName+".dat");
+            ObjectInputStream input = new ObjectInputStream(fileInput);
+            this.festival = (Festival) input.readObject();
+            input.close();
+            fileInput.close();
+        } catch (IOException i){
+            i.printStackTrace();
+            return;
+        } catch (ClassNotFoundException c){
+            c.printStackTrace();
+            SaveCurrentFestival(saveName);
+            return;
+        }
+    }
 }
