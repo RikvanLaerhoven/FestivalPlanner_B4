@@ -1,8 +1,5 @@
-package Performance;
+package performance;
 
-import Performance.*;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +9,7 @@ import java.util.List;
  * Class voor het toevoegen, verranderen van eigenschappen, sorteren en verwijderen van "Performances".
  */
 
-public class Timetable {
+public class Timetable implements java.io.Serializable{
 
     private List<Performance> performances;
 

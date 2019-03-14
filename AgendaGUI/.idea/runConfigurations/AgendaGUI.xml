@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AgendaGUI" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="GUI" />
-    <module name="AgendaGUI" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

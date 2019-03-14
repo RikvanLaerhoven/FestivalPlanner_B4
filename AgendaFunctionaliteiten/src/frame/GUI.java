@@ -1,7 +1,9 @@
+package frame;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 
-import Performance.*;
+import performance.*;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,7 +17,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class GUI extends Application {

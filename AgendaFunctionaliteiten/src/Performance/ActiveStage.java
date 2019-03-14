@@ -1,9 +1,9 @@
-package Performance;
+package performance;
 
 /**
  * Boris Korevaar & Rafael Binnenmarsch
  */
-public class ActiveStage implements Stages {
+public class ActiveStage implements Stages, java.io.Serializable {
 
     private String name;
     private int beginTime;

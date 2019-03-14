@@ -1,4 +1,4 @@
-package Performance;
+package performance;
 
 /**
  * @author Boris Korevaar & Rafael Binnenmarsch

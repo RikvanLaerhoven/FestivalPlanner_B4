@@ -1,9 +1,9 @@
-package Performance;
+package performance;
 
 /**
  * @author Boris Korevaar & Rafael Binnenmarsch
  */
-public class Artist implements Artists {
+public class Artist implements Artists, java.io.Serializable {
 
     private ActiveStage stage;
     private String name;
