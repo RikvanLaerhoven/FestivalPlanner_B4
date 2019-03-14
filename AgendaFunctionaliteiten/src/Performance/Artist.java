@@ -1,40 +1,43 @@
 package performance;
 
-/**
- * @author Boris Korevaar & Rafael Binnenmarsch
+/***
+ *  Gemaakt door Boris Korevaar
+ *
+ *  Artist is een class waar een artiest wordt opgezet en er een genre en populariteit aan verbonden word.
+ *
  */
-public class Artist implements Artists, java.io.Serializable {
+public class Artist implements java.io.Serializable {
 
-    private ActiveStage stage;
-    private String name;
-    private String genre;
-    private int popularity;
+    private String  name;
+    private String  genre;
+    private int     popularity;
 
-    public Artist(String name, String genre, ActiveStage stage, int popularity){
-        this.name = name;
+
+    public Artist(){
+
+    }
+
+    public void setGenre(String genre) {
         this.genre = genre;
-        this.stage = stage;
-        this.popularity = popularity;
     }
 
-    public void setPopularity(int i){
-        this.popularity = i;
-    }
-    public int  getPopularity(){
+    public int getPopularity() {
         return this.popularity;
     }
 
-    public void setGenre(String genre){
-        this.genre = genre;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getGenre(){
+
+    public String getGenre() {
         return this.genre;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setPopularity(int popularity) {
+        this.popularity = popularity;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
 }

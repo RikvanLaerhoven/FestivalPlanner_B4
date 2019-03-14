@@ -37,7 +37,6 @@ public class GUI extends Application {
     private String timeToInput;
     private int dataCounter = 1;
 
-    private Timetable timetable;
 
 
     public void start(Stage stage) throws Exception {
@@ -244,8 +243,6 @@ public class GUI extends Application {
         gridPaneData.add(new Label(stringEditor(popularityInput)), 4, dataCounter);
         gridPaneData.add(new Label(stringEditor(timeFromInput + " - " + timeToInput)), 5, dataCounter);
 
-        ActiveStage temp = new ActiveStage(stageInput, Integer.parseInt(timeFromInput), Integer.parseInt(timeToInput));
-        timetable.addPerformance( temp, new Artist(nameInput, genreInput, temp, Integer.parseInt(popularityInput)), temp.getBeginTime(),temp.getEndTime());
     }
 
 }
