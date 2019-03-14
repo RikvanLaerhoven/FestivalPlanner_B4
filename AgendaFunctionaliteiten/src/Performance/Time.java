@@ -1,7 +1,7 @@
 package performance;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Time is een class waar een begin en eindtijd aan te geven van een optreden.
  *

@@ -1,7 +1,7 @@
 package performance;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Stage is een class waar een podium wordt gedefineerd.
  *

@@ -1,7 +1,7 @@
 package performance;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Artist is een class waar een artiest wordt opgezet en er een genre en populariteit aan verbonden word.
  *

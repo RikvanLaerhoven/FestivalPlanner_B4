@@ -1,7 +1,7 @@
 package performance;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Performance is een class waar een optreden wordt samengevoegd met artiesten en podias
  *

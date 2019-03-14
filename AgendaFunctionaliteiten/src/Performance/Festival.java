@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Festival is een class waar alles kwa artiesten, podias en genre's worden verzameld.
  *  Er zijn checks ingebouwd bij elke add en remove zodat als iets verwijderd word het ook uit alle Lists verwijdert wordt.

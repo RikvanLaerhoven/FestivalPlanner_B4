@@ -1,7 +1,7 @@
 package performance;
 
 /***
- *  Gemaakt door Boris Korevaar
+ *  @author  Boris Korevaar
  *
  *  Genre is een class waar een Genre wordt gedefineerd en informatie over wordt vrijgegeven.
  *
